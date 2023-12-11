@@ -40,7 +40,7 @@ public final class ArrayBag<T> implements BagInterface<T> {
 
     @Override
     public boolean isEmpty() {
-        return numberOfEntries == 0;
+        return getCurrentSize() == 0;
     }
 
     @Override
@@ -56,11 +56,38 @@ public final class ArrayBag<T> implements BagInterface<T> {
 
     @Override
     public T remove() {
-        return null;
+        if (isEmpty()) return null;
+
+        T item = bag[numberOfEntries];
+        bag[numberOfEntries] = null;
+        numberOfEntries--;
+        return item;
+
     }
 
     @Override
     public boolean remove(T anEntry) {
+        if (isEmpty()) return false;
+
+        for (int index = 0; index <= numberOfEntries; index++) {
+            if (anEntry == bag[index]){
+                if (index == numberOfEntries){
+                    bag[numberOfEntries] = null;
+                    numberOfEntries--;
+                    return true;
+                } else {
+                    bag[index] = null;
+                    while(true)
+                    {
+                        bag[index] = bag[++index];
+                        if (index >= numberOfEntries){
+                            numberOfEntries--;
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
         return false;
     }
 
@@ -102,6 +129,17 @@ public final class ArrayBag<T> implements BagInterface<T> {
     private void checkIntegrity() {
         if (!integrityOk) {
             throw new SecurityException("ArrayBag object is corrupt");
+        }
+    }
+
+    public void displayItems(){
+        if(isEmpty()){
+            System.out.println("bag is empty");
+            return;
+        }
+        for (int index = 0; index < numberOfEntries; index++)
+        {
+            System.out.println(bag[index]);
         }
     }
 }
