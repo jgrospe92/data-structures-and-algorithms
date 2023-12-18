@@ -12,6 +12,7 @@ public class Main {
 
         bag.add("apple");
         bag.add("grapes");
+        bag.add("grapes");
         bag.add("milk");
         System.out.println("current size!: " + bag.getCurrentSize());
         bag.displayItems();
@@ -23,7 +24,10 @@ public class Main {
         bag.add("cheese");
         System.out.println("current size!: " + bag.getCurrentSize());
         bag.displayItems();
-        bag.clear();
-        bag.displayItems();
+        String match = "grapes";
+        int foundItem = bag.getFrequencyOf(match);
+        System.out.println("Found " + match +  ":" + foundItem );
+        System.out.println("current size!: " + bag.getCurrentSize());
+        System.out.println("Is grapes exists " + bag.contains(match));
     }
 }

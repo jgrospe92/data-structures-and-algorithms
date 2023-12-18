@@ -100,12 +100,28 @@ public final class ArrayBag<T> implements BagInterface<T> {
     }
 
     @Override
-    public int getFrequencyOf(Object anEntry) {
-        return 0;
+    public int getFrequencyOf(T anEntry) {
+        int counter = 0;
+        if (isEmpty()) return counter;
+
+        for (int i = 0; i < numberOfEntries; i++) {
+            if (anEntry == bag[i]){
+                counter++;
+            }
+        }
+        return counter;
     }
 
     @Override
-    public boolean contains(Object anEntry) {
+    public boolean contains(T anEntry) {
+        if (isEmpty()) return false;
+
+        for (int i = 0; i < numberOfEntries; i++) {
+            if (anEntry == bag[i]){
+                return true;
+            }
+        }
+
         return false;
     }
 
