@@ -105,7 +105,7 @@ public final class ArrayBag<T> implements BagInterface<T> {
         if (isEmpty()) return counter;
 
         for (int i = 0; i < numberOfEntries; i++) {
-            if (anEntry == bag[i]){
+            if (anEntry.equals(bag[i])){
                 counter++;
             }
         }
@@ -115,13 +115,11 @@ public final class ArrayBag<T> implements BagInterface<T> {
     @Override
     public boolean contains(T anEntry) {
         if (isEmpty()) return false;
-
         for (int i = 0; i < numberOfEntries; i++) {
-            if (anEntry == bag[i]){
+            if (anEntry.equals(bag[i])){
                 return true;
             }
         }
-
         return false;
     }
 
