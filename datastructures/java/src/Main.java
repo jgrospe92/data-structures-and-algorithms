@@ -23,5 +23,7 @@ public class Main {
         bag.add("cheese");
         System.out.println("current size!: " + bag.getCurrentSize());
         bag.displayItems();
+        bag.clear();
+        bag.displayItems();
     }
 }

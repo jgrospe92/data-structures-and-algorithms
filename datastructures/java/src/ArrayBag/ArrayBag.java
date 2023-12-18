@@ -93,7 +93,10 @@ public final class ArrayBag<T> implements BagInterface<T> {
 
     @Override
     public void clear() {
-
+        for (int i = 0; i < numberOfEntries; i++) {
+            bag[i] = null;
+        }
+        numberOfEntries = 0;
     }
 
     @Override
