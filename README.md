@@ -12,8 +12,15 @@
 
 ## Design Pattern
 - Factory Design Pattern
-  - The Factory pattern is one of the most commonly used design patterns in Java. It allows objects to be created without exposing the instantiation logic to the client. Instead, the client interacts with the created object through a common interface. This approach avoids the direct use of the new keyword, which is often considered outdated in favor of more flexible and testable designs. The Factory pattern typically returns an instance of one of several possible classes, depending on the input or configuration.
-
+  - Description
+    - The Factory pattern is one of the most commonly used design patterns in Java. It allows objects to be created without exposing the instantiation logic to the client. Instead, the client interacts with the created object through a common interface. This approach avoids the direct use of the new keyword, which is often considered outdated in favor of more flexible and testable designs. The Factory pattern typically returns an instance of one of several possible classes, depending on the input or configuration.
+  - Usage
+    - When object creation is complex or involves logic
+      -  Creating different types of documents (PDF, Word, Excel) based on a user's input or settings.
+    - When you want to decouple object creation from usage
+      - A payment system that selects between CreditCardPayment, PayPalPayment, or ApplePayPayment based on user preference.
+    - When your application needs to decide which class to instantiate at runtime
+      - Loading different database drivers (MySQLDriver, PostgresDriver, MongoDriver) depending on a config setting.
 ## Algorithms
 
 
