@@ -10,6 +10,10 @@
 ## Data Structures
 - Bag
 
+## Design Pattern
+- Factory Design Pattern
+  - The Factory pattern is one of the most commonly used design patterns in Java. It allows objects to be created without exposing the instantiation logic to the client. Instead, the client interacts with the created object through a common interface. This approach avoids the direct use of the new keyword, which is often considered outdated in favor of more flexible and testable designs. The Factory pattern typically returns an instance of one of several possible classes, depending on the input or configuration.
+
 ## Algorithms
 
 
