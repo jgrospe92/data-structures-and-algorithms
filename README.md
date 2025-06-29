@@ -21,6 +21,18 @@
       - A payment system that selects between CreditCardPayment, PayPalPayment, or ApplePayPayment based on user preference.
     - When your application needs to decide which class to instantiate at runtime
       - Loading different database drivers (MySQLDriver, PostgresDriver, MongoDriver) depending on a config setting.
+- Abstract Factory Design Pattern
+  - Description
+    - The Abstract Factory pattern is a higher-level abstraction compared to the Factory pattern. Instead of creating objects directly, it creates factories that produce related objects. This is why it's often called a "factory of factories." In this pattern, an interface is used to create a group of related factories without specifying the exact classes. Each factory created can then generate objects following the standard Factory pattern.
+  - Advantage
+    - The Abstract Factory Pattern separates client code from specific implementation classes.
+    - It simplifies the process of swapping entire families of related objects.
+    - It ensures consistency among objects that are designed to work together.
+  - Usage
+    - When the system should not depend on how objects are created, put together, or represented.
+    - When a group of related objects must always be used together, and this rule needs to be enforced.
+    - When you want to offer a library of objects that hides the details and only shows the interfaces.
+    - When the system needs to be set up using one of several possible groups of related objects.
 ## Algorithms
 
 
